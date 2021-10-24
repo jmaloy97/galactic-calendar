@@ -26,7 +26,7 @@ def dayDeclaration():
     global rawday
     while True:
         try:
-            rawday = int(input("What day do you want to see? (1-99): "))
+            rawday = int(input("What day do you want to see? (1-100): "))
             break
         except:
             print("NOT A NUMBER - ID 10T ERROR")
@@ -50,7 +50,7 @@ def yrDec():
             print("NOT A NUMBER")
 
 def dayChk():
-    while rawday <= 0 or rawday >= 100:
+    while rawday <= 0 or rawday > 100:
         dayDeclaration()
 
 def monChk():
@@ -78,7 +78,7 @@ def monthGeneration():
     global monthname
     monthname = months[monthval-1]
 
-while rawday > 99 or rawday < 1:
+while rawday > 100 or rawday < 1:
     date_and_time()
 
 if yearval < 0:
@@ -102,9 +102,9 @@ if eraname == "ME":
     elif yearval == 503:
         explanation = "503 ME marked the end of the Clone Wars and the rise of the first Galactic Empire."
     elif yearval == 546:
-        explanation = "546 ME marks the rise of the nouveau Sith under the rule of Harry Potter."
+        explanation = "546 ME marks the rise of the nouveau Sith."
 
-print("\n" + weekday + ", " + monthname + " " + str(rawday) + " " + str(yearval) + " " + str(eraname))
+print("\n" + weekday + ", " + str(rawday) + " " + monthname + " " + str(yearval) + " " + str(eraname))
 print(str(rawday) + "." + str(monthval) + emptyvar + str(yearval))
 print("==============")
 print(explanation)
